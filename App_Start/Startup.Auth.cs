@@ -12,6 +12,7 @@ using apiGreenShop.Providers;
 using apiGreenShop.Models;
 using Microsoft.Owin.Cors;
 using static apiGreenShop.ApplicationUserManager;
+using Microsoft.AspNet.SignalR;
 
 namespace apiGreenShop
 {
@@ -33,7 +34,14 @@ namespace apiGreenShop
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
             app.UseCookieAuthentication(new CookieAuthenticationOptions());
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
-            app.MapSignalR();
+           // app.MapSignalR("/signalr", new HubConfiguration());
+
+            app.Map("/signalr", map => {
+                map.UseCors(CorsOptions.AllowAll);
+                var hubConfiguration = new HubConfiguration();
+                map.RunSignalR(hubConfiguration);
+            });
+
             // Configure the application for OAuth based flow
             PublicClientId = "self";
             OAuthOptions = new OAuthAuthorizationServerOptions

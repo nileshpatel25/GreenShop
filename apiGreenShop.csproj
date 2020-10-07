@@ -272,7 +272,6 @@
     </Compile>
     <Compile Include="Helper\PushNotificationLogic.cs" />
     <Compile Include="Helper\SendSMS.cs" />
-    <Compile Include="hub.cs" />
     <Compile Include="Migrations\202008071100589_greenshop.cs" />
     <Compile Include="Migrations\202008071100589_greenshop.Designer.cs">
       <DependentUpon>202008071100589_greenshop.cs</DependentUpon>
@@ -354,6 +353,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="ServerHub.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -126,9 +126,9 @@ namespace apiGreenShop.Controllers
                 //  string notificationMessage = string.Empty;
                 //  notificationMessage = "New Order Received";
 
-                var hubContext = GlobalHost.ConnectionManager.GetHubContext<hub>();               
-               hubContext.Clients.All.notify("NewOrderReceived");
-              
+                var hubContext = GlobalHost.ConnectionManager.GetHubContext<ServerHub>();
+                hubContext.Clients.All.notify("NewOrderReceived");
+                // hub.BroadcastCommonDataStatic();
                 // sendSMS.SendTextSms("Order Placed: Your orderNo :  " + "OD" + count.ToString() + " amounting to Rs." + orderRequest.totalamount + " has been received. your delivery is scheduled next day. We will send you an update when your order is packed/shipped, Green Shop.", "91" + orderRequest.phoneno);
 
                 //  var myobj = new { Name = "Nilesh", City = "Chikhli" };
