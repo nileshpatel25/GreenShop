@@ -24,8 +24,7 @@ namespace apiGreenShop.Helper
                     string to, message;
                     to = _strMobile;
                     message = _Message;
-                    string baseURL = "http://www.txtguru.in/imobile/api.php?username=secinverse&password=Sec@2020&source=BALVEG&dmobile=" + _strMobile + "&message=" + _Message + "";
-                    client.OpenRead(baseURL);
+                   
                 }
 
 
