@@ -24,7 +24,8 @@ namespace apiGreenShop.Helper
                     string to, message;
                     to = _strMobile;
                     message = _Message;
-                    string varialbe;
+                    string str;
+                   
                    
                 }
 
